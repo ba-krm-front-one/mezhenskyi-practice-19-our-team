@@ -1,0 +1,73 @@
+
+@import "normalize.scss";
+@import "layout.scss";
+@import "variables.scss";
+
+body {
+  background: $main-background-color;
+}
+
+#plans {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 390px;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+}
+
+.plan {
+  flex-grow: 1;
+  max-width: 390px;
+  min-width: 350px;
+  height: 411px;
+  padding: 10px;
+
+  &__background {
+    box-shadow: 2px 4px 59px #7a6be7 ;
+    background-color: #f5f4f9 ;
+    width: 100%;
+    max-width: 380px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__header {
+    height: 701px;
+  }
+
+  &__details {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 295px;
+    background-color: #ffffff ;
+    align-self: flex-end;
+    &::before {
+      display: block;
+      position: absolute;
+      width: 100%;
+      max-width: 380px;
+      height: 140px;
+      border-top-left-radius: 80%;
+      border-top-right-radius: 80%;
+      content: ' ';
+      background: inherit;
+      top: -70px;
+    }
+  }
+
+  &--primary {
+    height: 501px;
+  }
+}
+@media all and (max-width: 718px) {
+  .plan {
+    &--primary {
+      order: -1;
+    }
+  }
+}
